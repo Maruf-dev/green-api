@@ -1,0 +1,355 @@
+:root {
+  --accent: #6c4cf1;
+  --accent-2: #8a4bf5;
+  --accent-grad: linear-gradient(135deg, #8a4bf5 0%, #6c4cf1 100%);
+  --bg: #eef0f5;
+  --panel: #ffffff;
+  --panel-2: #f5f6f9;
+  --text: #16181d;
+  --muted: #8a8f9a;
+  --border: #e6e8ee;
+  --incoming: #f1f1f5;
+  --error: #e5484d;
+  --info: #2f6fed;
+  --radius: 14px;
+  --shadow: 0 12px 40px rgba(23, 25, 35, 0.12);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font-family: inherit; cursor: pointer; }
+input, textarea { font-family: inherit; }
+
+/* ------------------------------- кнопки ------------------------------- */
+
+.primary-button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background-image: var(--accent-grad);
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.primary-button:hover:not(:disabled) { filter: brightness(1.07); }
+.primary-button:disabled { opacity: 0.6; cursor: default; }
+
+.ghost-button {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 12px;
+  padding: 11px 18px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.ghost-button:hover:not(:disabled) { background: var(--panel-2); }
+
+.icon-button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  color: #fff;
+  background-image: var(--accent-grad);
+  display: grid;
+  place-items: center;
+}
+
+.icon-button:hover { filter: brightness(1.08); }
+
+.link-button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+.link-button:hover { text-decoration: underline; }
+
+/* ------------------------------- поля ------------------------------- */
+
+.field { display: block; margin-bottom: 14px; }
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a4f5a;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel-2);
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.field input:focus { border-color: var(--accent); background: #fff; }
+
+.hint { font-size: 12px; color: var(--muted); margin: 6px 0 12px; line-height: 1.45; }
+.hint code { background: var(--panel-2); padding: 1px 5px; border-radius: 5px; }
+
+.checkbox {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: #4a4f5a;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.checkbox input { margin-top: 2px; }
+
+/* ------------------------------- alerts ------------------------------- */
+
+.alert {
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+.alert-error { background: #fdecec; color: #a3242a; }
+.alert-info { background: #eaf1fe; color: #1e4fb8; }
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 16px 0;
+}
+.alert-close { border: none; background: none; color: inherit; font-size: 14px; }
+
+/* ------------------------------- вход ------------------------------- */
+
+.login-screen {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(1100px 520px at 50% -10%, #d9d1ff 0%, var(--bg) 55%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+}
+
+.login-logo, .brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 28px;
+  background-image: var(--accent-grad);
+}
+
+.login-logo { margin: 0 auto 16px; }
+
+.login-title { margin: 0; text-align: center; font-size: 24px; }
+.login-subtitle {
+  margin: 8px 0 22px;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.login-subtitle a { color: var(--accent); }
+
+.login-card .primary-button { width: 100%; margin-top: 6px; }
+.advanced { margin: 6px 0; }
+
+/* ------------------------------- каркас ------------------------------- */
+
+.app { display: flex; height: 100vh; overflow: hidden; background: var(--bg); }
+
+/* ------------------------------- сайдбар ------------------------------- */
+
+.sidebar {
+  width: 340px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-logo { width: 42px; height: 42px; border-radius: 13px; font-size: 21px; }
+.brand-title { font-size: 16px; font-weight: 700; }
+.brand-subtitle { font-size: 12px; color: var(--muted); }
+
+.search-box { padding: 0 16px 12px; }
+.search-box input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--panel-2);
+  font-size: 14px;
+  outline: none;
+}
+.search-box input:focus { border-color: var(--accent); background: #fff; }
+
+.chat-list { flex: 1; overflow-y: auto; padding: 4px 8px 12px; }
+.chat-list-empty { padding: 28px 16px; text-align: center; color: var(--muted); font-size: 13.5px; }
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  border-radius: 14px;
+  text-align: left;
+}
+.chat-item:hover { background: var(--panel-2); }
+.chat-item.active { background: #ece8ff; }
+
+.chat-item-body { flex: 1; min-width: 0; }
+.chat-item-name {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chat-item-preview {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.badge {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 11px;
+  background-image: var(--accent-grad);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  flex: none;
+  user-select: none;
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+.status-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); flex: none; }
+.status-running { background: #2fb344; }
+.status-error { background: var(--error); }
+.status-text { flex: 1; }
+
+/* ------------------------------- модалка ------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 22, 30, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 10;
+}
+
+.modal {
+  width: 100%;
+  max-width: 380px;
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.modal-title { margin: 0 0 6px; font-size: 19px; }
+.modal-text { margin: 0 0 18px; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+
+/* --------------------------- выбор провайдера --------------------------- */
+
+.provider-switch {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  background: var(--panel-2);
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.provider-tab {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 9px 10px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.provider-tab:hover { color: var(--accent); }
+
+.provider-tab.active {
+  background: #fff;
+  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(23, 25, 35, 0.08);
+}

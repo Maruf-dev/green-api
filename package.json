@@ -1,0 +1,23 @@
+{
+  "name": "max-green-api-chat",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Простой React-чат: MAX через GREEN-API (по ТЗ) и Telegram через Bot API",
+  "scripts": {
+    "dev": "vite",
+    "dev:all": "node scripts/dev.mjs",
+    "server": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^4.5.3"
+  }
+}
